@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=W1areaoftriangle
+comment0.text=\n\ A\ Program\ to\ calculate\ area\ of\ triangle.\n\n\ @author\ (Saikiran\ Reddy\ Anugula)\n\ @version\ (10/06/2025)\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
