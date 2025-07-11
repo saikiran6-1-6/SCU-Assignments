@@ -9,8 +9,7 @@ LOOP marks
     THEN lowestMarks IS mark
     CHECK mark IS GREATER THAN highestMarks
     THEN highestMarks IS mark
-DISPLAY lowestMarks
-DISPLAY highestMarks
+RETURN lowestMarks,highestMarks
 END
 
 //Psuedo code to print highest and lowest marks.
@@ -25,6 +24,34 @@ FOR mark in marks
     if mark > highestMarks THEN
     highestMarks = mark
 ENDFOR
-OUTPUT lowestMarks
-OUTPUT highestMarks
+RETURN lowestMarks,highestMarks
+END
+
+
+//Algorithm to find mean of the marks
+START
+GET marks
+SET COUNTER as ZERO
+SET MEANVALUE as ZERO
+LOOP marks
+    ADD MEANVALUE TO mark
+    INCREMENT COUNTER BY one
+END LOOP
+CALCULATE MEANVALUE
+    MEANVALUE DIVIDED BY COUNTER
+RETURN MEANVALUE
+END
+
+//Psuedo code to print mean of the marks
+
+START
+GET marks
+SET COUNTER = 0
+SET MEANVALUE = 0
+FOR mark in marks
+    MEANVALUE = MEANVALUE + mark
+    COUNTER = COUNTER + 1
+ENDFOR
+MEANVALUE = MEANVALUE / COUNTER
+RETURN MEANVALUE
 END
