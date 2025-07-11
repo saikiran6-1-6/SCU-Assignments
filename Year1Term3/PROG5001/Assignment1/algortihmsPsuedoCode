@@ -55,3 +55,30 @@ ENDFOR
 MEANVALUE = MEANVALUE / COUNTER
 RETURN MEANVALUE
 END
+
+
+//Algorithm to find variance of student marks
+
+START
+GET mean
+SET sumofsquareddifferences TO ZERO
+LOOP marks
+    CALCULATE sumofsquareddifferences
+    SUM OF sumofsquareddifferences IS EUQAL TO mark MINUS mean SQUARED
+END LOOP
+CALCULATE Variance
+    Variance IS EQUAL TO SUM OF SQUARED DIFFERENCES DIVIDED BY numberofmarks MINUS one
+RETURN Variance
+END
+
+
+//Psuedo code to find variance of student marks
+
+START
+GET mean
+SET  sumofsquareddifferences = 0.0
+FOR mark in marks
+    sumofsquareddifferences = (mark - mean) square
+END FOR
+Variance = sumofsquareddifferences / numberofmarks -1
+RETURN Variance
