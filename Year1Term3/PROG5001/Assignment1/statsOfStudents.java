@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 /**
  * A Program to compute the average price of ten most recent sales
@@ -8,7 +9,7 @@ import java.util.Scanner;
  * @version (11/06/2025)
  */
 
-import java.util.Scanner;
+
 public class statsOfStudents
  {
     public static void main(String[] args) {
@@ -28,7 +29,6 @@ public class statsOfStudents
 
             double mark = scanner.nextDouble();
 
-
         //Check if the mark is less than 0 or greater than 30, if that is the case prompt the user to input valid marks.
         //Which is greater than 0 or less than 30.
             if (mark >=0 && mark <=30) {
@@ -39,8 +39,24 @@ public class statsOfStudents
                 System.out.println("Please enter marks between 0 and 30: ");
                 i--;
             }
+
         }
 
+    double lowestMarks = marks[0];
+    double highestMarks = marks[0];
+
+    for (int i = 0; i < validmarks; i++) {
+        if (marks[i] < lowestMarks) {
+            lowestMarks = marks[i];
+        }
+        if (marks[i] > highestMarks) {
+            highestMarks = marks[i];
+        }
+    }
+
+    System.out.println("The marks of the student are " + Arrays.toString(marks) + ": ");
+    System.out.println("The lowest marks of the student are " + lowestMarks + ": ");
+    System.out.println("The highest marks of student are "+ highestMarks + ": ");
     scanner.close();
     }
  }
