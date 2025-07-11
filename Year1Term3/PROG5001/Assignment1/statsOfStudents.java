@@ -41,30 +41,34 @@ public class statsOfStudents
 
         }
     
+    double[] LowestAndHighestMarks = lhmarks(marks);
     double MeanValue = mean(marks);
     
 
-    double lowestMarks = marks[0];
-    double highestMarks = marks[0];
-
-    for (int i = 0; i < validmarks; i++) {
-        if (marks[i] < lowestMarks) {
-            lowestMarks = marks[i];
-        }
-        if (marks[i] > highestMarks) {
-            highestMarks = marks[i];
-        }
-    }
-
     System.out.println("The marks of the student are " + Arrays.toString(marks) + ": ");
-    System.out.println("The lowest marks of the student are " + lowestMarks + ": ");
-    System.out.println("The highest marks of student are "+ highestMarks + ": ");
+    System.out.println("The lowest marks of the student are " + LowestAndHighestMarks[0] + ": ");
+    System.out.println("The highest marks of the student are " + LowestAndHighestMarks[1] + ": ");
     System.out.println("The mean of student marks is " + MeanValue + ": ");
 
     
     scanner.close();
     }
 
+    private static double[] lhmarks(double[] marks) {
+        double lmarks = marks[0];
+        double hmarks = marks[0];
+
+        for (int i = 0; i<marks.length; i++) {
+            if (marks[i] < lmarks) {
+                lmarks = marks[i];
+            }
+            if (marks[i] > hmarks) {
+                hmarks = marks[i];
+            }
+        }
+
+        return new double[]{lmarks,hmarks};
+    }
     private static double mean(double[] marks) {
         double meanvalue =0.0;
         int count = 0;
