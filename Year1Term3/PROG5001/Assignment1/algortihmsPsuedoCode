@@ -1,0 +1,30 @@
+//Algorithm to print highest and lowest marks.
+
+START
+GET marks
+SET lowestMarks AS FIRST mark IN marks
+SET highestMarks AS FIRST mark IN marks
+LOOP marks
+    CHECK mark IS LESS THAN lowestMarks
+    THEN lowestMarks IS mark
+    CHECK mark IS GREATER THAN highestMarks
+    THEN highestMarks IS mark
+DISPLAY lowestMarks
+DISPLAY highestMarks
+END
+
+//Psuedo code to print highest and lowest marks.
+
+START
+GET marks
+SET lowestMarks = marks[0]
+SET highestMarks = marks[0]
+FOR mark in marks
+    if mark < lowestMarks THEN
+    lowestMarks = mark
+    if mark > highestMarks THEN
+    highestMarks = mark
+ENDFOR
+OUTPUT lowestMarks
+OUTPUT highestMarks
+END
