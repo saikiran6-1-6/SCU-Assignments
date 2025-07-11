@@ -43,12 +43,14 @@ public class statsOfStudents
     
     double[] LowestAndHighestMarks = lhmarks(marks);
     double MeanValue = mean(marks);
-    
+    double VarianceValue = variance(marks);
 
     System.out.println("The marks of the student are " + Arrays.toString(marks) + ": ");
     System.out.println("The lowest marks of the student are " + LowestAndHighestMarks[0] + ": ");
     System.out.println("The highest marks of the student are " + LowestAndHighestMarks[1] + ": ");
     System.out.println("The mean of student marks is " + MeanValue + ": ");
+    System.out.println("number of marks: " + marks.length);
+    System.out.println("The variance of student marks is " + VarianceValue + ": ");    
 
     
     scanner.close();
@@ -82,6 +84,19 @@ public class statsOfStudents
         meanvalue = meanvalue/count;
 
         return meanvalue;        
+    }
+
+    private static double variance(double[] marks) {
+        double sumofsquareddifferences = 0.0;
+        double variance = 0.0;
+        for (int i=0; i<marks.length; i++) {
+            sumofsquareddifferences = sumofsquareddifferences + (marks[i] - mean(marks)) * (marks[i] - mean(marks));
+        }
+
+        variance = sumofsquareddifferences / (marks.length - 1);
+
+        return variance;
+
     }
 
 
