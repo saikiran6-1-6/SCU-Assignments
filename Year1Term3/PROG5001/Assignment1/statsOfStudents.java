@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 
 import java.util.Scanner;
- public class statsofstudents
+public class statsOfStudents
  {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -24,7 +24,7 @@ import java.util.Scanner;
 
         //Get the marks for individual subject.
         for (int i = 0; i < numberofmarks; i++ ) {
-            System.out.print("Enter the marks of subject: " + (i + 1) + ": ");
+            System.out.print("Enter the marks of subject " + (i + 1) + ": ");
 
             double mark = scanner.nextDouble();
 
