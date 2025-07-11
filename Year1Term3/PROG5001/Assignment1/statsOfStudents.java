@@ -9,7 +9,6 @@ import java.util.Arrays;
  * @version (11/06/2025)
  */
 
-
 public class statsOfStudents
  {
     public static void main(String[] args) {
@@ -41,6 +40,9 @@ public class statsOfStudents
             }
 
         }
+    
+    double MeanValue = mean(marks);
+    
 
     double lowestMarks = marks[0];
     double highestMarks = marks[0];
@@ -57,6 +59,26 @@ public class statsOfStudents
     System.out.println("The marks of the student are " + Arrays.toString(marks) + ": ");
     System.out.println("The lowest marks of the student are " + lowestMarks + ": ");
     System.out.println("The highest marks of student are "+ highestMarks + ": ");
+    System.out.println("The mean of student marks is " + MeanValue + ": ");
+
+    
     scanner.close();
     }
+
+    private static double mean(double[] marks) {
+        double meanvalue =0.0;
+        int count = 0;
+
+        for (int i=0; i<marks.length; i++)
+        {
+            meanvalue = meanvalue + marks[i];
+            count++;
+        }
+        
+        meanvalue = meanvalue/count;
+
+        return meanvalue;        
+    }
+
+
  }
