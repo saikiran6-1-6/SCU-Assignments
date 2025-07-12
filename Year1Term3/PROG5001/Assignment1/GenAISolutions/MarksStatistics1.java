@@ -1,3 +1,5 @@
+package GenAISolutions;
+
 import java.util.Scanner;
 
 public class MarksStatistics1 {
@@ -51,5 +53,6 @@ public class MarksStatistics1 {
         double variance = varianceSum / n;
 
         System.out.printf("Highest: %.2f\nLowest: %.2f\nMean: %.2f\nVariance: %.2f\n", highest, lowest, mean, variance);
+        scanner.close();
     }
 }
