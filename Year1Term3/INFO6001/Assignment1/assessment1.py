@@ -1,5 +1,6 @@
 import hashlib
 import time
+import time
 
 class Block:
     def __init__(self, index, data, previous_hash):
@@ -15,3 +16,16 @@ class Block:
         return hashlib.sha256(block_string.encode()).hexdigest()
     
 
+class Blockchain:
+    def __init__(self):
+        self.chain = [self.create_genesis_block()]
+        self.difficulty = 4  # number of zeros for the hash to startwith
+
+    def create_genesis_block(self):
+        # First block in chain where previous hash is "0"
+        return Block(0, "0", time.time(), "Genesis Block", 0)
+
+    def get_latest_block(self):
+        # Return last block in the chain
+        return self.chain[-1]
+    
