@@ -29,3 +29,26 @@ class Blockchain:
         # Return last block in the chain
         return self.chain[-1]
     
+    def add_block(self, new_block):
+        new_block.previous_hash = self.get_latest_block().hash
+        self.chain.append(new_block)
+
+    def proof_of_work(self, block):
+        block.proof = 0
+        while True:
+            block.hash = block.calculate_hash()
+            if block.hash.startswith("0" * self.difficulty):
+                break
+            block.proof += 1
+
+    def add_data(self, data):
+        new_block = Block(
+            len(self.chain),
+            "0",
+            time.time(),
+            data,
+            0
+        )
+        self.proof_of_work(new_block)
+        self.add_block(new_block)
+
