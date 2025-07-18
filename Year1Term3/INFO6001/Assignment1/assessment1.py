@@ -63,3 +63,37 @@ class Blockchain:
                 print(f"Block {current.index}: is not linked to previous block!")
                 return False
         return True
+
+if __name__ == "__main__":
+    blockchain = Blockchain()
+
+    while True:
+        print("\nChoose an option:")
+        print("1. Add a new block")
+        print("2. Show the blockchain")
+        print("3. Check if blockchain is valid")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            data = input("Enter data for the new block: ")
+            print("Mining new block...")
+            blockchain.add_data(data)
+            print("Block added!")
+        elif choice == "2":
+            for block in blockchain.chain:
+                print(f"Block {block.index}")
+                print(f"  Timestamp: {block.timestamp}")
+                print(f"  Data: {block.data}")
+                print(f"  Proof: {block.proof}")
+                print(f"  Prev Hash: {block.previous_hash}")
+                print(f"  Hash: {block.hash}\n")
+        elif choice == "3":
+            if blockchain.is_chain_valid():
+                print("Blockchain is valid!")
+            else:
+                print("Blockchain is NOT valid!")
+        elif choice == "4":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid option")
