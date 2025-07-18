@@ -52,3 +52,14 @@ class Blockchain:
         self.proof_of_work(new_block)
         self.add_block(new_block)
 
+    def is_chain_valid(self):
+        for i in range(1, len(self.chain)):
+            current = self.chain[i]
+            previous = self.chain[i-1]
+            if current.hash != current.calculate_hash():
+                print(f"Block {current.index}: hash does not match!")
+                return False
+            if current.previous_hash != previous.hash:
+                print(f"Block {current.index}: is not linked to previous block!")
+                return False
+        return True
