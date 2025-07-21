@@ -1,3 +1,8 @@
+"""
+Added github link for this project
+https://github.com/saikiran6-1-6/SCU-Assignments/tree/681f38b853fab2fca25bf5ba6bdd8ac4f1b734b7/Year1Term3/INFO6001/Assignment1
+"""
+
 import hashlib  # Module used For creating secure hashes
 import time     # Module For calculating timestamps
 
