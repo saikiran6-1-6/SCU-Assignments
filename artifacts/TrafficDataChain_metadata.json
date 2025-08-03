@@ -286,19 +286,19 @@
 	},
 	"sources": {
 		"Year1Term3/INFO6001/Assignment2/trafficDataSharing/entityManager.sol": {
-			"keccak256": "0x9892b3bfa88b129546e6b37c021ffd43a0543f41e810f8ac5b7b1280d2c06a0f",
+			"keccak256": "0x786e796932870fad5ae4f82ec6c3e28549dd283897b838cfa5e41923c18eb293",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f7c8acd8cc0755e8dbf9af7d0e02222867d61a48071901885d54b99697272503",
-				"dweb:/ipfs/QmVEV32T6BJy2n98sfibx2sAac5JoxDuaYm2YzNrBEnnju"
+				"bzz-raw://b983b596e1ed171226f025f436d664e2d7a769da868bc3f6d7a2362f32cedac4",
+				"dweb:/ipfs/QmaLafgiFZzjhNanpUpotsNXnWf2ox6PX42GEDvpAu5MYM"
 			]
 		},
 		"Year1Term3/INFO6001/Assignment2/trafficDataSharing/trafficData.sol": {
-			"keccak256": "0x337de14310be2b9a34eefbf94c3e4a1b7601efe166716bc3baa85762a3679eae",
+			"keccak256": "0xcbf153e4729cc006336d195a0e6bdf6dfcbdaa752d57d7e426a20c6dd2cf4c11",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://edfc8c11d28e64efea1dcaeb831e34c115bd78c24c5f4d45cb4d2a80ed9b1a1a",
-				"dweb:/ipfs/QmUy35JF3dbwDJrDN4698h6cBQrkCcpk6HVJjYgEsmHSqa"
+				"bzz-raw://f9e6c3f7430a3fda2bc38ad3fc37d03f6839a14c1b970649796892380fa82238",
+				"dweb:/ipfs/Qmaxw7WNwskwNA6cdMuCdwJBUmfcYDgFQqXdniuzzvvzYf"
 			]
 		}
 	},

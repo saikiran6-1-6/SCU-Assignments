@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.30;
 
 // Creating a Entity Manager contract to be able to create entities.
 contract EntityManager {
