@@ -1,0 +1,20 @@
+//Algorithm with Psuedocode to Calculate Total Marks and Filter Students
+//Below a Threshold
+
+BEGIN
+
+    // 1 - Get and Validate Inputs From User
+    GET fileName from user
+    GET thresHold from user
+    IF fileName is empty THEN
+        OUTPUT "File Name Cannot Be Empty"
+        EXIT
+    END IF
+
+    IF thresHold < 0 OR thresHold is not a number THEN
+        OUTPUT "Threshold cannot be a negative number"
+        EXIT
+    END IF
+
+
+
