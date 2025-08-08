@@ -17,4 +17,74 @@ BEGIN
     END IF
 
 
+    // 2 - Check if File Exists
+    IF file does not exist THEN
+        OUTPUT "File Not Found"
+        EXIT
+    END IF
 
+
+    // 3 - Create variables and lists
+    CREATE empty list for studentRecords
+    SET unitName = empty string
+    SET validRecords = 0
+
+    // 4 - Reading file and handling boundary cases
+    OPEN file fileName
+    READ first line into unitName
+    IF unitName is empty THEN
+        OUTPUT "Error: File is empty or missing unit name"
+        CLOSE file
+        EXIT
+    END IF
+    WHILE NOT end of file DO
+        READ next line into line
+        IF line is empty OR line starts with "#" THEN // Ignore comments and empty lines
+            CONTINUE to next line
+        END IF
+        PARSE line into lastName, firstName, studentID, mark1, mark2, mark3
+        // Validate student data
+        IF lastName is empty OR firstName is empty OR studentID is empty THEN
+            OUTPUT "Warning: Skipping record with missing name or ID"
+            CONTINUE
+        END IF
+        // Check for empty marks and warn user
+        SET emptyFields = empty list
+        IF mark1 is empty THEN
+            ADD "A1" to emptyFields
+            SET mark1 = 0
+        END IF
+        IF mark2 is empty THEN
+            ADD "A2" to emptyFields
+            SET mark2 = 0
+        END IF
+        IF mark3 is empty THEN
+            ADD "A3" to emptyFields
+            SET mark3 = 0
+        END IF
+        IF emptyFields is not empty THEN
+            OUTPUT "Warning: Missing marks for ", firstName, " ", lastName, " (Student ID: ", studentID, ") in fields ", emptyFields
+            OUTPUT "Consider updating the missing fields to include this record in calculations"
+        END IF
+        // Validate marks (assuming marks are between 0 and 30 per assignment)
+        SET validMarks = true
+        FOR each mark in (mark1, mark2, mark3) DO
+            IF mark is not a number OR mark < 0 OR mark > 30 THEN
+                OUTPUT "Warning: Invalid mark in record for ", firstName, " ", lastName
+                SET validMarks = false
+                BREAK
+            END IF
+        END FOR
+        IF validMarks THEN
+            CALCULATE totalMarks = mark1 + mark2 + mark3
+            CREATE studentRecord with lastName, firstName, studentID, totalMarks
+            ADD studentRecord to studentRecords
+            INCREMENT validRecords
+        ELSE
+            OUTPUT "Warning: Skipping record with invalid marks"
+        END IF
+    END WHILE
+    CLOSE file
+
+
+    
