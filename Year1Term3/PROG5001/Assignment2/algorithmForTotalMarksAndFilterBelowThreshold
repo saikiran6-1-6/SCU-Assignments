@@ -87,4 +87,32 @@ BEGIN
     CLOSE file
 
 
-    
+
+    // 5 - Validating student records
+    IF validRecords = 0 THEN
+        OUTPUT "No Valid Student Records Found"
+        EXIT
+    END IF
+
+
+    // 6 - Filtering and printing students below a threshold
+    OUTPUT "Unit: ", unitName
+    OUTPUT "Students with total marks below threshold ", threshold
+    SET studentsPrinted = 0
+    FOR each student in studentRecords DO
+        IF student.totalMarks < threshold THEN
+            OUTPUT student.firstName, " ", student.lastName, " Student ID ", student.studentID, " Total Marks: ", student.totalMarks
+            INCREMENT studentsPrinted
+        END IF
+    END FOR
+
+
+    // 7 - Edge case
+    IF studentsPrinted = 0 THEN
+        OUTPUT "No students have total marks below ", threshold
+    ELSE IF studentsPrinted = validRecords THEN
+        OUTPUT "All students have total marks below ", threshold
+    END IF
+END
+
+
