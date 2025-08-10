@@ -1,26 +1,29 @@
 package assignment2JavaProgram;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class csvFileProcessing extends fileProcessing {
-    private List<student> studentRecords;
+// Class to read and process CSV files, extends FileProcessor for abstraction
+public class CSVFileProcessor extends FileProcessor {
+    private List<Student> studentRecords;
     private String unitName;
     private int validRecords;
 
-    // Constructor
-    public csvFileProcessing() {
+    // Standard constructor to initialize fields
+    public CSVFileProcessor() {
         this.studentRecords = new ArrayList<>();
         this.unitName = "";
         this.validRecords = 0;
     }
 
-
+    // Implementation of readFile to process CSV file and calculate total marks as sum of A1, A2, A3
+    @Override
     public boolean readFile(String fileName) {
         if (fileName == null || fileName.trim().isEmpty()) {
-            System.out.println("Error: File name cannot be empty");
+            System.out.println("File Name Cannot Be Empty");
             return false;
         }
 
@@ -78,7 +81,7 @@ public class csvFileProcessing extends fileProcessing {
                 }
 
                 if (validMarks) {
-                    studentRecords.add(new student(lastName, firstName, studentID, mark1, mark2, mark3));
+                    studentRecords.add(new Student(lastName, firstName, studentID, mark1, mark2, mark3));
                     validRecords++;
                 } else {
                     System.out.println("Warning: Skipping record with invalid marks");
@@ -86,7 +89,7 @@ public class csvFileProcessing extends fileProcessing {
             }
             return true;
         } catch (IOException e) {
-            System.out.println("Error: File not found or cannot be read");
+            System.out.println("File Not Found");
             return false;
         }
     }
@@ -108,7 +111,7 @@ public class csvFileProcessing extends fileProcessing {
     }
 
     // Getters (encapsulation)
-    public List<student> getStudentRecords() {
+    public List<Student> getStudentRecords() {
         return studentRecords;
     }
 
@@ -116,8 +119,7 @@ public class csvFileProcessing extends fileProcessing {
         return unitName;
     }
 
-    public int getValidRecordsCount() {
+    public int getValidRecords() {
         return validRecords;
     }
 }
-
