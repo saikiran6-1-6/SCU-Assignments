@@ -1,4 +1,4 @@
-// Algorithm with Pseudocode to Calculate Total Marks and Filter Students Below a Threshold
+// Algorithm with Pseudocode to Identify Top and Bottom Five Students by Total Marks
 
 
 // Abstract Class: FileProcessor
@@ -144,11 +144,6 @@ END CLASS
 BEGIN
     // 1 - Get and Validate Inputs From User
     GET fileName from user
-    GET threshold from user
-    IF threshold < 0 OR threshold is not a number THEN
-        OUTPUT "Threshold cannot be a negative number"
-        EXIT
-    END IF
 
     // 2 - Create FileProcessor
     CREATE fileProcessor = new CSVFileProcessor()
@@ -169,21 +164,33 @@ BEGIN
         EXIT
     END IF
 
-    // 6 - Filtering and printing students below a threshold
-    OUTPUT "Unit: ", unitName
-    OUTPUT "Students with total marks (sum of A1, A2, A3) below threshold ", threshold
-    SET studentsPrinted = 0
-    FOR each student in studentRecords DO
-        IF student.getTotalMarks() < threshold THEN
-            CALL student.displayDetails()
-            INCREMENT studentsPrinted
-        END IF
+    // 6 - Sort studentRecords by total marks (sum of A1, A2, A3)
+    FOR i = 0 TO length(studentRecords) - 1 DO
+        FOR j = 0 TO length(studentRecords) - i - 1 DO
+            IF studentRecords[j].getTotalMarks() < studentRecords[j+1].getTotalMarks() THEN
+                SWAP studentRecords[j] with studentRecords[j+1]
+            END IF
+        END FOR
     END FOR
 
-    // 7 - Edge case
-    IF studentsPrinted = 0 THEN
-        OUTPUT "No students have total marks below ", threshold
-    ELSE IF studentsPrinted = validRecords THEN
-        OUTPUT "All students have total marks below ", threshold
+    // 7 - Print top 5 students
+    OUTPUT "Unit: ", unitName
+    OUTPUT "Top 5 students by total marks (sum of A1, A2, A3)"
+    IF validRecords < 5 THEN
+        OUTPUT "Note: Fewer than 5 students available"
     END IF
+    SET count = MIN(5, validRecords)
+    FOR i = 0 TO count - 1 DO
+        CALL studentRecords[i].displayDetails()
+    END FOR
+
+    // 8 - Print bottom 5 students
+    OUTPUT "Bottom 5 students by total marks (sum of A1, A2, A3)"
+    IF validRecords < 5 THEN
+        OUTPUT "Note: Fewer than 5 students available"
+    END IF
+    SET startIndex = MAX(0, length(studentRecords) - 5)
+    FOR i = startIndex TO length(studentRecords) - 1 DO
+        CALL studentRecords[i].displayDetails()
+    END FOR
 END
