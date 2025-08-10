@@ -1,0 +1,67 @@
+```csv
+IntroToCoding
+LastName,FirstName,StudentID,A1,A2,A3
+Lee,Anna,240001,10,15,20
+Kim,Ben,240002,25,25,25
+Park,Clara,240003,20,20,20
+Choi,Dan,240004,15,15,15
+Nguyen,Linh,240005,18,19,20
+# Comment line
+Smith,John,240006,,20,15
+Doe,Jane,240007,25,,10
+Brown,Alice,240008,15,25,
+Wilson,Bob,240009,,15,20
+Taylor,Emma,240010,20,,25
+Davis,Sarah,240011,-5,20,15
+Clark,Michael,240012,abc,25,30
+Lee,David,240013,35,20,10
+Green,Tom,240014,-10,15,20
+Hall,Lisa,240015,40,30,30
+,James,240016,10,15,20
+Johnson,,240017,20,25,30
+White,Emily,240018,28,27,26
+Adams,Chris,240019,22,21,20
+Baker,Olivia,240020,18,19,20
+# Empty line test
+,,240021,10,15,20
+Carter,,240022,25,20,15
+Young,Sophia,240023,,25,20
+King,Liam,,240024,15,15,15
+Scott,Ava,240025,20,20,
+# Comment line
+Turner,Lucas,240026,-5,20,15
+Parker,Chloe,240027,abc,25,30
+Phillips,Ethan,240028,35,20,10
+Evans,Amelia,240029,10,15,20
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+# Comment line
+,
+```
