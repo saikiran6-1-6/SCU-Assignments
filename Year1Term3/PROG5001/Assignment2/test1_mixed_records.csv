@@ -1,5 +1,3 @@
-```csv
-Programming101
 LastName,FirstName,StudentID,A1,A2,A3
 Smith,John,230001,25,20,15
 Doe,Jane,230002,30,28,27
@@ -9,6 +7,11 @@ Taylor,Emma,230005,20,25,
 Lee,David,230006,-5,20,15
 Davis,Sarah,230007,abc,25,30
 Clark,Michael,230008,35,20,10
+//this is a random comment in a input test file
+//this is a random comment in a input test file
+//this is a random comment in a input test file
+//this is a random comment in a input test file
+//this is a random comment in a input test file
 ,James,230009,10,15,20
 Johnson,,230010,20,25,30
 White,Emily,230003,28,27,26
@@ -52,4 +55,5 @@ James,Luna,230047,22,21,20
 Watson,Benjamin,230048,15,16,17
 Brooks,Ella,230049,23,22,21
 Nguyen,Linh,230050,18,19,20
-```
+john,doe,230051,0,5,3
+john,david,230051,0,2,1

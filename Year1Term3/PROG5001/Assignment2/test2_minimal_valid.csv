@@ -1,5 +1,3 @@
-```csv
-IntroToCoding
 LastName,FirstName,StudentID,A1,A2,A3
 Lee,Anna,240001,10,15,20
 Kim,Ben,240002,25,25,25
@@ -33,35 +31,3 @@ Turner,Lucas,240026,-5,20,15
 Parker,Chloe,240027,abc,25,30
 Phillips,Ethan,240028,35,20,10
 Evans,Amelia,240029,10,15,20
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-# Comment line
-,
-```

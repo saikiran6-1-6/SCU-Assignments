@@ -4,19 +4,23 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 // Class to read and process CSV files, extends FileProcessor for abstraction
 public class CSVFileProcessor extends FileProcessor {
     private List<Student> studentRecords;
     private String unitName;
     private int validRecords;
+    private Set<String> studentIds; // Track unique student IDs
 
     // Standard constructor to initialize fields
     public CSVFileProcessor() {
         this.studentRecords = new ArrayList<>();
         this.unitName = "";
         this.validRecords = 0;
+        this.studentIds = new HashSet<>(); // Initialize set for ID tracking
     }
 
     // Implementation of readFile to process CSV file and calculate total marks as sum of A1, A2, A3
@@ -60,6 +64,12 @@ public class CSVFileProcessor extends FileProcessor {
                     continue;
                 }
 
+                // Check for duplicate student ID
+                if (studentIds.contains(studentID)) {
+                    System.out.println("Warning: Skipping duplicate student ID: " + studentID + " for " + firstName + " " + lastName);
+                    continue;
+                }
+
                 // Handle marks, including empty fields
                 List<String> emptyFields = new ArrayList<>();
                 float mark1 = parseMark(data[3], "A1", emptyFields, firstName, lastName, studentID);
@@ -82,6 +92,7 @@ public class CSVFileProcessor extends FileProcessor {
 
                 if (validMarks) {
                     studentRecords.add(new Student(lastName, firstName, studentID, mark1, mark2, mark3));
+                    studentIds.add(studentID); // Add ID to set
                     validRecords++;
                 } else {
                     System.out.println("Warning: Skipping record with invalid marks");
